@@ -1,5 +1,17 @@
-# Vue 3 + Vite
+# My Personal Portfolio
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Purpose 
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Layout 
+src/
+├── assets/          # Global styles, fonts, images
+├── components/      # Reusable UI elements
+│   ├── ui/          # Low-level primitives (Buttons, Cards, Modals)
+│   ├── layout/      # Navbar, Footer, Sidebar
+│   └── projects/    # Feature-specific components (ProjectCard, FilterBar)
+├── composables/     # Shared, reactive logic (e.g., useTheme, useMarkdown)
+├── router/          # Vue Router configurations
+├── views/           # Page-level components (HomeView, ProjectsView, PostView)
+├── content/         # Static markdown files for posts or project bios
+├── App.vue          # Root component
+└── main.js          # App initialization

@@ -7,7 +7,7 @@ import StarfieldBackground from './components/ui/StarfieldBackground.vue'
 
 <template>
   <StarfieldBackground>
-    <div class="flex min-h-screen flex-col bg-transparent text-zinc-900 antialiased dark:bg-transparent dark:text-zinc-50 transition-colors duration-300">
+    <div class="flex min-h-screen flex-col bg-transparent text-zinc-50 antialiased light:bg-transparent light:text-zinc-900 transition-colors duration-300">
       <Navbar />
       <!-- Page view injection -->
       <div class="flex-1 flex flex-col">

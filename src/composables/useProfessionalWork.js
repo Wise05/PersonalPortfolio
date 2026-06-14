@@ -79,6 +79,7 @@ export function useProfessionalWork() {
           meta: {
             title: data.title || slug,
             description: data.description || '',
+            company: data.company || '',
             date: data.date || '',
             tags: data.tags || [],
             featured: !!data.featured,

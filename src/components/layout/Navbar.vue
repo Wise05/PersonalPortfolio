@@ -3,15 +3,15 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/70 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/70">
+  <header class="sticky top-0 z-50 w-full border-b border-zinc-800 bg-zinc-950/70 backdrop-blur-md light:border-zinc-200 light:bg-white/70">
     <div class="mx-auto flex h-16 max-w-4xl items-center justify-between px-4 sm:px-6 lg:px-8">
       
       <!-- Brand Logo / Name -->
       <RouterLink 
         to="/" 
-        class="group flex items-center gap-2 text-lg font-bold tracking-tight text-zinc-900 transition-colors dark:text-white"
+        class="group flex items-center gap-2 text-lg font-bold tracking-tight text-white transition-colors light:text-zinc-900"
       >
-        <span class="bg-gradient-to-r from-zinc-900 to-zinc-500 bg-clip-text text-transparent dark:from-white dark:to-zinc-400">
+        <span class="bg-linear-to-r from-white to-zinc-400 bg-clip-text text-transparent light:from-zinc-900 light:to-zinc-500">
           Zephaniah Gustafson
         </span>
       </RouterLink>
@@ -20,33 +20,33 @@ import { RouterLink } from 'vue-router'
       <nav class="flex items-center gap-6">
         <RouterLink 
           to="/" 
-          class="text-sm font-medium text-zinc-650 transition-colors hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
-          active-class="text-zinc-900 font-semibold dark:text-white"
+          class="text-sm font-medium text-zinc-400 transition-colors hover:text-white light:text-zinc-650 light:hover:text-zinc-950"
+          active-class="text-white font-semibold light:text-zinc-900"
         >
           Home
         </RouterLink>
         <RouterLink 
           to="/about" 
-          class="text-sm font-medium text-zinc-650 transition-colors hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
-          active-class="text-zinc-900 font-semibold dark:text-white"
+          class="text-sm font-medium text-zinc-400 transition-colors hover:text-white light:text-zinc-650 light:hover:text-zinc-950"
+          active-class="text-white font-semibold light:text-zinc-900"
         >
           About
         </RouterLink>
         <RouterLink 
           to="/search" 
-          class="text-sm font-medium text-zinc-650 transition-colors hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
-          active-class="text-zinc-900 font-semibold dark:text-white"
+          class="text-sm font-medium text-zinc-400 transition-colors hover:text-white light:text-zinc-650 light:hover:text-zinc-950"
+          active-class="text-white font-semibold light:text-zinc-900"
         >
           Search
         </RouterLink>
 
         <!-- Social / Contact Quick Links -->
-        <div class="flex items-center gap-4 border-l border-zinc-200 pl-6 dark:border-zinc-800">
+        <div class="flex items-center gap-4 border-l border-zinc-800 pl-6 light:border-zinc-200">
           <a 
             href="https://github.com/Wise05" 
             target="_blank" 
             rel="noopener noreferrer" 
-            class="text-zinc-500 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white transition-colors"
+            class="text-zinc-400 hover:text-white light:text-zinc-500 light:hover:text-zinc-950 transition-colors"
             title="GitHub"
             aria-label="GitHub"
           >
@@ -60,7 +60,7 @@ import { RouterLink } from 'vue-router'
             href="https://www.linkedin.com/in/zephaniah-gustafson-13a36b1aa/" 
             target="_blank" 
             rel="noopener noreferrer" 
-            class="text-zinc-500 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white transition-colors"
+            class="text-zinc-400 hover:text-white light:text-zinc-500 light:hover:text-zinc-950 transition-colors"
             title="LinkedIn"
             aria-label="LinkedIn"
           >
@@ -74,7 +74,7 @@ import { RouterLink } from 'vue-router'
           <a 
             href="../../assets/Resume_Spring_2026_Zephaniah_Gustafson.pdf" 
             download="Zephaniah_Gustafson_Resume.pdf"
-            class="text-zinc-500 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white transition-colors"
+            class="text-zinc-400 hover:text-white light:text-zinc-500 light:hover:text-zinc-950 transition-colors"
             title="Download CV"
             aria-label="Download CV"
           >

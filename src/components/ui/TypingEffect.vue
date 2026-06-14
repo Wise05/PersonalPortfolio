@@ -1,6 +1,6 @@
 <template>
   <div class="inline-flex items-center font-mono font-bold">
-    <span class="text-4xl font-extrabold tracking-tight text-zinc-950 sm:text-5xl dark:text-white">
+    <span class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl light:text-zinc-950">
       {{ displayText }}
     </span>
     <span 
@@ -15,7 +15,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const props = defineProps({
   words: {
     type: Array,
-    default: () => ['Software Engineer', 'Student', 'Linux Lover', 'Front End Developer', 'Intern', 'Vim Enjoyer']
+    default: () => ['Software Engineer', 'Student', 'Linux Lover', 'Front End Developer', 'Peruser', 'Intern', 'Climbing Enthusiast', 'Vim Enjoyer', 'Music Nerd']
   },
   typeSpeed: {
     type: Number,

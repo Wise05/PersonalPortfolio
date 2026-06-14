@@ -1,4 +1,5 @@
 <script setup>
+import { ref, onMounted } from 'vue'
 import { 
   GraduationCap, 
   Briefcase, 
@@ -11,6 +12,26 @@ import {
   ExternalLink
 } from '@lucide/vue'
 import mugShot from '../assets/mug_shot.webp'
+
+const tracks = ref([])
+const isLoading = ref(true)
+const isError = ref(false)
+
+onMounted(async () => {
+  try {
+    const response = await fetch('/api/songs')
+    if (!response.ok) {
+      throw new Error('Failed to fetch songs')
+    }
+    const data = await response.json()
+    tracks.value = Array.isArray(data) ? data.slice(0, 5) : []
+  } catch (error) {
+    console.error('Error fetching recently liked tracks:', error)
+    isError.value = true
+  } finally {
+    isLoading.value = false
+  }
+})
 </script>
 
 <template>
@@ -237,6 +258,73 @@ import mugShot from '../assets/mug_shot.webp'
               </p>
             </div>
             
+          </div>
+        </section>
+
+        <!-- Recently Liked Tracks Section -->
+        <section v-if="!isError && (isLoading || tracks.length > 0)" class="space-y-6 pt-10 border-t border-zinc-200 dark:border-zinc-900">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold tracking-tight text-zinc-900 dark:text-white flex items-center gap-2">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
+              On Repeat
+            </h3>
+            <span class="text-xs text-zinc-550 dark:text-zinc-450 uppercase tracking-wider font-semibold">Tuned in recently</span>
+          </div>
+
+          <!-- Loading Skeleton -->
+          <div v-if="isLoading" class="space-y-3">
+            <div 
+              v-for="i in 5" 
+              :key="i"
+              class="flex items-center gap-4 p-3 rounded-xl border border-zinc-150 bg-white/50 dark:border-zinc-850/50 dark:bg-zinc-950/50 animate-pulse"
+            >
+              <div class="w-14 h-14 bg-zinc-200 dark:bg-zinc-900 rounded-lg shrink-0"></div>
+              <div class="flex-1 space-y-2.5">
+                <div class="h-4 bg-zinc-200 dark:bg-zinc-900 rounded w-2/3"></div>
+                <div class="h-3 bg-zinc-200 dark:bg-zinc-900 rounded w-1/3"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tracks List -->
+          <div v-else class="space-y-3">
+            <a 
+              v-for="(track, index) in tracks" 
+              :key="index"
+              :href="track.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group flex items-center justify-between gap-4 p-3 rounded-xl border border-zinc-200 bg-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md hover:border-zinc-300 hover:bg-zinc-50 dark:border-zinc-850 dark:bg-zinc-950 dark:hover:border-zinc-800 dark:hover:bg-zinc-900/50"
+            >
+              <div class="flex items-center gap-4 min-w-0 flex-1">
+                <!-- Thumbnail -->
+                <div class="relative w-14 h-14 rounded-lg overflow-hidden shrink-0 shadow-sm">
+                  <img 
+                    :src="track.thumbnail" 
+                    :alt="track.title" 
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                
+                <!-- Text Container -->
+                <div class="min-w-0 flex-1">
+                  <h4 class="text-sm font-bold text-zinc-900 dark:text-zinc-200 truncate group-hover:text-zinc-950 dark:group-hover:text-white transition-colors">
+                    {{ track.title }}
+                  </h4>
+                  <p class="text-xs text-zinc-550 dark:text-zinc-450 truncate mt-1">
+                    {{ track.artist }}
+                  </p>
+                </div>
+              </div>
+
+              <!-- Action Indicator -->
+              <div class="text-zinc-400 dark:text-zinc-600 group-hover:text-zinc-900 dark:group-hover:text-white transition-colors pl-2">
+                <ExternalLink class="h-4 w-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </div>
+            </a>
           </div>
         </section>
 

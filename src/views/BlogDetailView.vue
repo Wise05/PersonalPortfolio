@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { useProjects } from '../composables/useProjects'
+import { useBlog } from '../composables/useBlog'
 import { marked } from 'marked'
 import { ArrowLeft, Calendar, Tag } from '@lucide/vue'
 
@@ -13,15 +13,15 @@ const props = defineProps({
 })
 
 const router = useRouter()
-const { getProjectBySlug } = useProjects()
+const { getBlogPostBySlug } = useBlog()
 
-// Retrieve project content
-const project = computed(() => getProjectBySlug(props.slug))
+// Retrieve blog post content
+const post = computed(() => getBlogPostBySlug(props.slug))
 
-// If the project doesn't exist, redirect back to home or show 404
+// Parse markdown to HTML
 const parsedHtml = computed(() => {
-  if (!project.value) return ''
-  return marked.parse(project.value.content || '')
+  if (!post.value) return ''
+  return marked.parse(post.value.content || '')
 })
 
 const goBack = () => {
@@ -37,39 +37,39 @@ const goBack = () => {
       class="group mb-8 inline-flex items-center gap-2 text-sm font-medium text-zinc-650 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white transition-colors cursor-pointer"
     >
       <ArrowLeft class="h-4 w-4 group-hover:-translate-x-0.5 transition-transform" />
-      Back to projects
+      Back to home
     </button>
 
     <!-- Found State -->
-    <article v-if="project" class="space-y-8">
+    <article v-if="post" class="space-y-8">
       
       <!-- Header Meta -->
       <header class="space-y-4">
         <!-- Date & Featured Tag -->
         <div class="flex flex-wrap items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
-          <span v-if="project.meta.date" class="flex items-center gap-1">
+          <span v-if="post.meta.date" class="flex items-center gap-1">
             <Calendar class="h-3.5 w-3.5" />
-            {{ new Date(project.meta.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}
+            {{ new Date(post.meta.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}
           </span>
-          <span v-if="project.meta.featured" class="px-2 py-0.5 rounded bg-zinc-100 text-zinc-800 font-medium dark:bg-zinc-900 dark:text-zinc-200">
+          <span v-if="post.meta.featured" class="px-2 py-0.5 rounded bg-zinc-100 text-zinc-800 font-medium dark:bg-zinc-900 dark:text-zinc-200">
             Featured
           </span>
         </div>
 
-        <!-- Project Title -->
+        <!-- Post Title -->
         <h1 class="text-3xl font-extrabold tracking-tight text-zinc-950 sm:text-4xl dark:text-white">
-          {{ project.meta.title }}
+          {{ post.meta.title }}
         </h1>
 
-        <!-- Project Description -->
+        <!-- Post Description -->
         <p class="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed italic">
-          {{ project.meta.description }}
+          {{ post.meta.description }}
         </p>
 
-        <!-- Project Tags -->
+        <!-- Post Tags -->
         <div class="flex flex-wrap gap-2 pt-2">
           <span 
-            v-for="tag in project.meta.tags" 
+            v-for="tag in post.meta.tags" 
             :key="tag"
             class="inline-flex items-center gap-1 rounded-md px-2.5 py-0.5 text-xs font-semibold text-zinc-700 bg-zinc-150 dark:bg-zinc-900 dark:text-zinc-300"
           >
@@ -89,8 +89,8 @@ const goBack = () => {
 
     <!-- Not Found State -->
     <div v-else class="text-center py-20 border border-dashed border-zinc-300 rounded-2xl dark:border-zinc-800">
-      <h2 class="text-xl font-bold text-zinc-900 dark:text-white">Project Not Found</h2>
-      <p class="mt-2 text-zinc-650 dark:text-zinc-400">The project you are looking for does not exist or has been moved.</p>
+      <h2 class="text-xl font-bold text-zinc-900 dark:text-white">Blog Post Not Found</h2>
+      <p class="mt-2 text-zinc-650 dark:text-zinc-400">The blog post you are looking for does not exist or has been moved.</p>
       <button 
         @click="goBack" 
         class="mt-6 inline-flex items-center gap-2 rounded-lg bg-zinc-900 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-100 transition-colors"

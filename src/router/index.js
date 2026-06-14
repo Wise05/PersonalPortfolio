@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProjectDetailView from '../views/ProjectDetailView.vue'
+import BlogDetailView from '../views/BlogDetailView.vue'
+import WorkDetailView from '../views/WorkDetailView.vue'
+import Search from '../views/Search.vue'
 
 const routes = [
   {
@@ -13,6 +16,23 @@ const routes = [
     name: 'project-detail',
     component: ProjectDetailView,
     props: true
+  },
+  {
+    path: '/blog/:slug',
+    name: 'blog-detail',
+    component: BlogDetailView,
+    props: true
+  },
+  {
+    path: '/work/:slug',
+    name: 'work-detail',
+    component: WorkDetailView,
+    props: true
+  },
+  {
+    path: '/search',
+    name: 'search',
+    component: Search
   },
   // Catch-all route to redirect to Home
   {

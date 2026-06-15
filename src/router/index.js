@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import ProjectDetailView from '../views/ProjectDetailView.vue'
 import BlogDetailView from '../views/BlogDetailView.vue'
 import WorkDetailView from '../views/WorkDetailView.vue'
+import CourseworkDetailView from '../views/CourseworkDetailView.vue'
 import Search from '../views/Search.vue'
 import AboutView from '../views/AboutView.vue'
 
@@ -27,6 +28,12 @@ const routes = [
     path: '/blog/:slug',
     name: 'blog-detail',
     component: BlogDetailView,
+    props: true
+  },
+  {
+    path: '/coursework/:slug',
+    name: 'coursework-detail',
+    component: CourseworkDetailView,
     props: true
   },
   {

@@ -4,11 +4,13 @@ import { RouterLink } from 'vue-router'
 import { useProjects } from '../composables/useProjects'
 import { useBlog } from '../composables/useBlog'
 import { useProfessionalWork } from '../composables/useProfessionalWork'
-import { Search as SearchIcon, Calendar, Tag, X, BookOpen, Briefcase, Folder, SlidersHorizontal } from '@lucide/vue'
+import { useCoursework } from '../composables/useCoursework'
+import { Search as SearchIcon, Calendar, Tag, X, BookOpen, Briefcase, Folder, SlidersHorizontal, GraduationCap } from '@lucide/vue'
 
 const { getProjects } = useProjects()
 const { getBlogPosts } = useBlog()
 const { getWorkItems } = useProfessionalWork()
+const { getCoursework } = useCoursework()
 
 // Combine all resources
 const allItems = computed(() => {
@@ -26,6 +28,13 @@ const allItems = computed(() => {
     icon: BookOpen,
     badgeColor: 'bg-zinc-900 text-zinc-300 border-zinc-850 light:bg-zinc-100 light:text-zinc-800 light:border-zinc-200'
   }))
+  const coursework = getCoursework().map(item => ({
+    ...item,
+    section: 'Coursework',
+    route: { name: 'coursework-detail', params: { slug: item.slug } },
+    icon: GraduationCap,
+    badgeColor: 'bg-zinc-900 text-zinc-300 border-zinc-850 light:bg-zinc-100 light:text-zinc-800 light:border-zinc-200'
+  }))
   const work = getWorkItems().map(item => ({
     ...item,
     section: 'Professional Work',
@@ -34,7 +43,7 @@ const allItems = computed(() => {
     badgeColor: 'bg-zinc-900 text-zinc-300 border-zinc-850 light:bg-zinc-100 light:text-zinc-800 light:border-zinc-200'
   }))
 
-  return [...projects, ...blog, ...work]
+  return [...projects, ...blog, ...coursework, ...work]
 })
 
 // Query & Filter States
@@ -55,7 +64,7 @@ const allTags = computed(() => {
 })
 
 // Sections available
-const sections = ['Project', 'Blog', 'Professional Work']
+const sections = ['Project', 'Blog', 'Coursework', 'Professional Work']
 
 // Filter logic
 const filteredItems = computed(() => {

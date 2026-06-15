@@ -4,7 +4,8 @@ import { RouterLink } from 'vue-router'
 import { useProjects } from '../composables/useProjects'
 import { useBlog } from '../composables/useBlog'
 import { useProfessionalWork } from '../composables/useProfessionalWork'
-import { ArrowRight, Calendar, Tag, Briefcase } from '@lucide/vue'
+import { useCoursework } from '../composables/useCoursework'
+import { ArrowRight, Calendar, Tag, Briefcase, GraduationCap } from '@lucide/vue'
 import TypingEffect from '../components/ui/TypingEffect.vue'
 
 const { getProjects } = useProjects()
@@ -15,6 +16,9 @@ const blogPosts = computed(() => getBlogPosts())
 
 const { getWorkItems } = useProfessionalWork()
 const workItems = computed(() => getWorkItems())
+
+const { getCoursework } = useCoursework()
+const courseworkItems = computed(() => getCoursework())
 </script>
 
 <template>
@@ -172,6 +176,75 @@ const workItems = computed(() => getWorkItems())
         <h3 class="text-lg font-medium text-white light:text-zinc-900">No projects found</h3>
         <p class="mt-1 text-sm text-zinc-400 light:text-zinc-500">
           Add markdown files to <code class="rounded bg-zinc-900 px-1 py-0.5 light:bg-zinc-100">src/content/projects/</code> to see them listed here.
+        </p>
+      </div>
+    </section>
+
+    <!-- Coursework Section -->
+    <section class="pt-16 space-y-8">
+      <div class="flex items-center justify-between">
+        <h2 class="text-2xl font-bold tracking-tight text-white light:text-zinc-900">
+          Coursework
+        </h2>
+        <span v-if="courseworkItems.length > 0" class="text-sm text-zinc-400 light:text-zinc-500">
+          Showing {{ courseworkItems.length }} course{{ courseworkItems.length === 1 ? '' : 's' }}
+        </span>
+      </div>
+
+      <div v-if="courseworkItems.length > 0" class="grid gap-6 sm:grid-cols-2">
+        <RouterLink 
+          v-for="item in courseworkItems" 
+          :key="item.slug"
+          :to="{ name: 'coursework-detail', params: { slug: item.slug } }"
+          class="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-950 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-zinc-700 hover:shadow-none light:border-zinc-200 light:bg-white light:hover:border-zinc-300 light:hover:shadow-lg light:hover:shadow-zinc-100"
+        >
+          <div class="space-y-4">
+            <!-- Coursework Meta (Date & Tags) -->
+            <div class="flex flex-wrap items-center gap-3 text-xs text-zinc-400 light:text-zinc-500">
+              <span v-if="item.meta.date" class="flex items-center gap-1">
+                <Calendar class="h-3.5 w-3.5" />
+                {{ new Date(item.meta.date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' }) }}
+              </span>
+              <span v-if="item.meta.featured" class="px-2 py-0.5 rounded bg-zinc-900 text-zinc-200 font-medium light:bg-zinc-100 light:text-zinc-800">
+                Featured
+              </span>
+            </div>
+
+            <!-- Coursework Title & Description -->
+            <div class="space-y-2">
+              <h3 class="text-lg font-bold text-zinc-200 group-hover:text-white transition-colors light:text-zinc-900 light:group-hover:text-zinc-955">
+                {{ item.meta.title }}
+              </h3>
+              <p class="text-sm text-zinc-400 light:text-zinc-650 line-clamp-3 leading-relaxed">
+                {{ item.meta.description }}
+              </p>
+            </div>
+          </div>
+
+          <!-- Footer of the Card: Tags & Read Link -->
+          <div class="mt-6 flex items-center justify-between border-t border-zinc-900 pt-4 light:border-zinc-100">
+            <div class="flex flex-wrap gap-1.5">
+              <span 
+                v-for="tag in item.meta.tags" 
+                :key="tag"
+                class="inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-xs font-medium text-zinc-400 bg-zinc-900/50 light:bg-zinc-50 light:text-zinc-600"
+              >
+                {{ tag }}
+              </span>
+            </div>
+            <span class="flex items-center gap-1 text-xs font-semibold text-zinc-200 light:text-zinc-850 group-hover:translate-x-0.5 transition-transform">
+              View
+              <ArrowRight class="h-3.5 w-3.5" />
+            </span>
+          </div>
+        </RouterLink>
+      </div>
+
+      <!-- Empty State -->
+      <div v-else class="rounded-2xl border border-dashed border-zinc-800 p-12 text-center light:border-zinc-300">
+        <h3 class="text-lg font-medium text-white light:text-zinc-900">No coursework found</h3>
+        <p class="mt-1 text-sm text-zinc-400 light:text-zinc-500">
+          Add markdown files to <code class="rounded bg-zinc-900 px-1 py-0.5 light:bg-zinc-100">src/content/coursework/</code> to see them listed here.
         </p>
       </div>
     </section>

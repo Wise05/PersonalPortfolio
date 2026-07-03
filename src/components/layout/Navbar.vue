@@ -9,7 +9,7 @@ import { RouterLink } from 'vue-router'
       <!-- Brand Logo / Name -->
       <RouterLink 
         to="/" 
-        class="group flex items-center gap-2 text-lg font-bold tracking-tight text-white transition-colors light:text-zinc-900"
+        class="group flex items-center gap-2 text-lg hidden md:inline font-bold tracking-tight text-white transition-colors light:text-zinc-900"
       >
         <span class="bg-linear-to-r from-white to-zinc-400 bg-clip-text text-transparent light:from-zinc-900 light:to-zinc-500">
           Zephaniah Gustafson

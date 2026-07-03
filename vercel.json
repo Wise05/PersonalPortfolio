@@ -1,4 +1,14 @@
 {
   "installCommand": "npm install",
-  "devCommand": "npm run dev -- --port $PORT"
+  "devCommand": "npm run dev -- --port $PORT",
+  "rewrites": [
+    {
+      "source": "/api/songs",
+      "destination": "/api/songs.js"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }

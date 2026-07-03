@@ -137,10 +137,10 @@ onMounted(async () => {
           </h3>
           <div class="text-base text-zinc-400 light:text-zinc-650 space-y-4 leading-relaxed">
             <p>
-              I am a Software Engineering student attending <strong>Iowa State University</strong>, pursuing my Bachelor of Engineering degree with a target graduation date of May 2027. I have a deep passion for building polished, interactive digital experiences, balancing clean backend architectures with lively, dynamic frontend interactions.
+            I am a Software Engineering student at <strong>Iowa State University</strong>, pursuing my Bachelor of Science in Engineering with a target graduation date of May 2027. I have a deep love for continuous learning, mathematical logic, and complex problem-solving. While my foundational projects align closely with modern frontend engineering, my current focus is expanding into system architectures and backend APIs. 
             </p>
             <p>
-              For the summer of 2026, I am interning at <strong>Berry Consultants LLC</strong> on the Software Team. This experience has allowed me to apply my skills to real-world software engineering pipelines, collaborating closely with experienced engineers to build impactful solutions.
+              For the summer of 2026, I am interning at <strong>Berry Consultants LLC</strong> on the Software Team. This experience has allowed me to bridge the gap between user-facing design and complex statistical computing, while collaborating closely with senior engineers to build production-ready validation tools and data pipelines.
             </p>
           </div>
         </section>
@@ -160,12 +160,15 @@ onMounted(async () => {
                 <span>Languages &amp; Core</span>
               </div>
               <div class="flex flex-wrap gap-2">
+                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Java</span>
                 <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">JavaScript</span>
                 <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">TypeScript</span>
                 <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Python</span>
-                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">C++</span>
+                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">C</span>
+
                 <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">HTML5 / CSS3</span>
                 <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">SQL</span>
+                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">VHDL</span>
               </div>
             </div>
 
@@ -176,7 +179,6 @@ onMounted(async () => {
                 <span>Frameworks &amp; Runtimes</span>
               </div>
               <div class="flex flex-wrap gap-2">
-                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Vue 3 / Vue Router</span>
                 <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Node.js</span>
                 <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Express</span>
                 <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Tailwind CSS (v4)</span>
@@ -192,10 +194,7 @@ onMounted(async () => {
               </div>
               <div class="flex flex-wrap gap-2">
                 <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Git / GitHub</span>
-                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Vite</span>
-                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">REST APIs</span>
-                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Markdown Parsing</span>
-                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Docker</span>
+                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Linux</span>
                 <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">UX / UI Responsive Design</span>
               </div>
             </div>
@@ -230,7 +229,7 @@ onMounted(async () => {
                 Berry Consultants LLC
               </p>
               <p class="mt-2 text-sm text-zinc-450 light:text-zinc-600 leading-relaxed">
-                Working as an intern on the software team. Collaborating on system development, implementation of modern web-based applications, and agile developer workflows.
+                Developing deterministic rules checkers and Bayesian optimization algorithms for legacy simulation software.
               </p>
             </div>
 

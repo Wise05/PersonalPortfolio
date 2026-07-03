@@ -6,59 +6,62 @@ tags: ["Java", "Android", "UX/UI"]
 featured: true
 ---
 
-# Colloney
+# Colloney: A Gamified Student Financial Platform
 
-This project was a mobile finance app that aims to help students save for tuition and learn about/manage their finances. This was built for Com S 3090 at Iowa State University. I workedin a group of 4 (2 backend, 2 frontend) as part of the frontend team. 
+> **Award**: Placed **2nd out of ~13 teams** in Computer Science 3090 at Iowa State University.
 
-The original idea for this app was to make a fun gamified way to help students save for money. The main gimic being that the colony would grow as you made progress towards your savings goal. However, we did not implement that feature due to the requirements of the class forcing use to spend our time elsewhere. 
+**Colloney** is a mobile fintech application designed to help college students build savings habits, manage budgets, and develop financial literacy. Built over the course of a semester by a team of four (two frontend, two backend), I served as a primary engineer on the frontend team.
 
-The frontend was built with Java using Android Studio. The backend was made with Spring Boot. 
+The original vision for Colloney was a fully gamified savings experience where a digital town or "colony" would physically expand and thrive as the user made real-world progress toward their tuition savings goals. While strict academic milestones forced us to backlog some of our deeper gamification aesthetics, the core engine we shipped was robust enough to earn a top spot in the department.
 
-This project got us **second place** best project out of a class of ~50 people. 
+* **Frontend**: Java, Android Studio, XML
+* **Backend**: Spring Boot, WebSockets
 
-Check out the video demo: 
-[Link](https://www.youtube.com/watch?v=CKpuQ5GOM_Q)
+🎬 [Watch the Video Demo on YouTube](https://www.youtube.com/watch?v=CKpuQ5GOM_Q)
+
+---
 
 ## Key Features
 
-### Signing up 
+### 1. Onboarding & Dynamic Budgeting
+Upon registration, users are seamlessly guided into a targeted budgeting form. The app was designed to cross-reference data with the federal *College Scorecard API* to help students project realistic tuition milestones and timeline goals based on their institution.
 
-Signing up a user requires the user to create an account, which redirects them to the budgeting form. The idea for this for was to allow students to create a savings goal with a date for their tution based on information from the College Scorecard API. We intended to modify this feature after continuing to work on the project, but ran out of time for the class. 
+### 2. The Colloney Hub (Home Page)
+The dashboard consolidates the user's aggregate assets, active goals, and progress bars into a single view. Architecturally, the home page serves as a visual navigation hub where different financial modules are represented as interactive "buildings."
 
-### Home page 
+### 3. Real-Time Stocks & Mock Trading
+We built a simulated market environment allowing users to create watchlists, study historical performance data, and execute mock trades. 
+* **Under the Hood**: The Spring Boot backend managed automated background tasks to poll external financial APIs, which it cached locally. It then pushed real-time ticker updates to the Android frontend using a **WebSocket** connection for instant data-binding.
 
-The home page contains a total balance of all the user's assets in the app and shows their goal and progress. The home page also acts as the hub to enter different "buildings" which are the pages of the app that each provide essential functionality for our features.
+### 4. Core Banking & Micro-Transactions
+A streamlined ledger system where users can spin up multiple virtual accounts (checking, savings, etc.) to simulate deposits, withdrawals, and internal transfers, backed by a comprehensive transaction history log.
 
-There was an intention to make the colony "grow" as you made progress towards your savings goal, meaning that more houses would appear possibly with minigames, but this was backlogged and never completed. 
+### 5. Curated Financial News Feed
+To build financial literacy, the backend periodically scraped and sorted relevant economic articles. The frontend featured built-in filtering mechanisms, letting users isolate news by specific companies or macroeconomic topics.
 
-### Stocks page
+### 6. AI Financial Advisor ("Robot Financial Advice")
+We integrated a localized AI agent prompted to act specifically as a conservative financial advisor. The large language model interface was hosted on our server-side infrastructure, which the frontend consumed via a clean API layer.
 
-This was intended to allow users to create a watchlist of stocks (allowing them to view their history), buy and sell stocks, and view their portfolio. On the backend, this was done by running a timer to call an API for stock data and then collecting that on our given server. Then the frontend could use the API to get the data and also do mock buying and selling. We used a web socket for the stock price to give real time updates. 
+### 7. Social Posts & Community Feed
+To keep users engaged, we implemented a real-time social feed utilizing **WebSockets**. Students could post tips, discuss strategies, and filter global posts using keyword searches.
 
-### Banking page 
+### 8. Budgetary Planning
+An agile, last-mile implementation module focused on setting strict spending limits across distinct categories, designed to maximize our rubric coverage before final submission.
 
-This was a simple banking set up that allowed users to create various accounts and withdraw, deposit, or transfer money from them. You could also see transaction history. 
+---
 
-### News
+## My Contributions
 
-This showed a news feed of different articles that were collected by the backend. The backend got these articles by calling an API periodically, similar to stocks page. You could also filter based on company/topic. 
+As one of the two frontend developers, I was responsible for roughly half of the user-facing codebase:
+* **Feature Development**: Engineered the complete frontend architecture for the Login/Sign-Up flow, Budgeting Setup, Core Banking, AI Advisor interface, and the WebSocket-driven Social Feed.
+* **UI/UX Polishing**: Refactored and polished the XML layouts for the Stocks and News feeds to ensure visual continuity.
+* **Core Infrastructure**: Wrote the centralized `Volley` utility layer to standardize asynchronous HTTP networking. 
+* **Code Architecture**: Led a mid-semester codebase refactor to eliminate technical debt, enforce consistent styling rules, and decouple UI components from data parsing.
 
-### AI Advice
+---
 
-This was an AI that was given a prompt to behave as a financial advisor. The AI was hosted on the app's server and the frontend just called the API. 
+## Technical & Professional Reflection
 
-### Budgeting
+This project was a profound lesson in software engineering team dynamics. From architecture choices to design philosophies, our group experienced friction and communication barriers at almost every milestone. Navigating those moments required me to continually adapt my communication style, practice active listening, and find compromise under tight academic deadlines.
 
-This page allowed you to make budgeting plans. We kind of just tacked this on at the end to get points. 
-
-### Posts page
-
-This was a social media page that used a websocket to show real time posts. You could also filter posts based on key words. 
-
-## My contribution
-
-I built the frontend for Login/sign up, budget form, banking, AI advice, and posts page. I also polished the xml for the stocks page and news page. Built the volley utils and refactored the frontend midway through to give the frontend code a bit more consistency and clean up the messiness a bit. 
-
-## Challenges 
-
-This whole project was a real test in my people skills. There seemed to be some sort of disagreement at almost every step of the project. Many times, my teammates seemed to not understand what I was trying to convey, despite my best efforts to re-iterate. Overall, I think that the challenges that this group faced just in communication and team work prepared me for the absolute worst possible team situation you could be in without any real pressure. Since it was only a school project. Ironically, the technical part of this project was much easier than any of the team management aspects. 
+Ironically, solving the technical challenges—like handling concurrent WebSocket streams in Android—felt straightforward compared to managing team alignment. Ultimately, I am incredibly grateful for the friction. It served as a low-stakes sandbox that prepared me for complex, multi-developer engineering teams in the real world.

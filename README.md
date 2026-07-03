@@ -2,7 +2,7 @@
 
 A modern, minimalist, dark-mode first portfolio website built with **Vue 3**, **Vite**, and **Tailwind CSS v4**. This site serves as a digital hub showcasing professional work experience, academic coursework, technical projects, and writing.
 
-**Live Site:** [personal-portfolio-zevan-gustafson.vercel.app](https://personal-portfolio-zevan-gustafson.vercel.app/) (or your Vercel deployment link)
+**Live Site:** [zevangustafson.com](zevangustafson.com)
 
 ---
 

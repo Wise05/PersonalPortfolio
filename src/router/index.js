@@ -11,41 +11,48 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    meta: { title: 'Zevan Gustafson' }
   },
   {
     path: '/about',
     name: 'about',
-    component: AboutView
+    component: AboutView,
+    meta: { title: 'About | Zevan Gustafson' }
   },
   {
     path: '/projects/:slug',
     name: 'project-detail',
     component: ProjectDetailView,
-    props: true
+    props: true,
+    meta: { title: 'Projects | Zevan Gustafson' }
   },
   {
     path: '/blog/:slug',
     name: 'blog-detail',
     component: BlogDetailView,
-    props: true
+    props: true,
+    meta: { title: 'Blog | Zevan Gustafson' }
   },
   {
     path: '/coursework/:slug',
     name: 'coursework-detail',
     component: CourseworkDetailView,
-    props: true
+    props: true,
+    meta: { title: 'Coursework | Zevan Gustafson' }
   },
   {
     path: '/work/:slug',
     name: 'work-detail',
     component: WorkDetailView,
-    props: true
+    props: true,
+    meta: { title: 'Work | Zevan Gustafson' }
   },
   {
     path: '/search',
     name: 'search',
-    component: Search
+    component: Search,
+    meta: { title: 'Search | Zevan Gustafson' }
   },
   // Catch-all route to redirect to Home
   {
@@ -64,6 +71,11 @@ const router = createRouter({
       return { top: 0 }
     }
   }
+})
+
+router.afterEach((to) => {
+  const defaultTitle = 'Zevan Gustafson'
+  document.title = to.meta.title || defaultTitle
 })
 
 export default router

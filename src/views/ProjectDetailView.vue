@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useProjects } from '../composables/useProjects'
 import { marked } from 'marked'
@@ -17,6 +17,13 @@ const { getProjectBySlug } = useProjects()
 
 // Retrieve project content
 const project = computed(() => getProjectBySlug(props.slug))
+
+// Update document title dynamically
+watch(project, (newProject) => {
+  if (newProject?.meta?.title) {
+    document.title = `${newProject.meta.title} | Zevan Gustafson`
+  }
+}, { immediate: true })
 
 // If the project doesn't exist, redirect back to home or show 404
 const parsedHtml = computed(() => {

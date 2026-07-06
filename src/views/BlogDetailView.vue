@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useBlog } from '../composables/useBlog'
 import { marked } from 'marked'
@@ -17,6 +17,13 @@ const { getBlogPostBySlug } = useBlog()
 
 // Retrieve blog post content
 const post = computed(() => getBlogPostBySlug(props.slug))
+
+// Update document title dynamically
+watch(post, (newPost) => {
+  if (newPost?.meta?.title) {
+    document.title = `${newPost.meta.title} | Zevan Gustafson`
+  }
+}, { immediate: true })
 
 // Parse markdown to HTML
 const parsedHtml = computed(() => {

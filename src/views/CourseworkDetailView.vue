@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useCoursework } from '../composables/useCoursework'
 import { marked } from 'marked'
@@ -17,6 +17,13 @@ const { getCourseworkBySlug } = useCoursework()
 
 // Retrieve coursework content
 const courseworkItem = computed(() => getCourseworkBySlug(props.slug))
+
+// Update document title dynamically
+watch(courseworkItem, (newItem) => {
+  if (newItem?.meta?.title) {
+    document.title = `${newItem.meta.title} | Zevan Gustafson`
+  }
+}, { immediate: true })
 
 // Parse markdown to HTML
 const parsedHtml = computed(() => {

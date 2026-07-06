@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { useProfessionalWork } from '../composables/useProfessionalWork'
 import { marked } from 'marked'
@@ -17,6 +17,13 @@ const { getWorkItemBySlug } = useProfessionalWork()
 
 // Retrieve work content
 const workItem = computed(() => getWorkItemBySlug(props.slug))
+
+// Update document title dynamically
+watch(workItem, (newItem) => {
+  if (newItem?.meta?.title) {
+    document.title = `${newItem.meta.title} | Zevan Gustafson`
+  }
+}, { immediate: true })
 
 // Parse markdown to HTML
 const parsedHtml = computed(() => {

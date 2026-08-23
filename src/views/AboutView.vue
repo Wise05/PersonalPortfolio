@@ -137,10 +137,10 @@ onMounted(async () => {
           </h3>
           <div class="text-base text-zinc-400 light:text-zinc-650 space-y-4 leading-relaxed">
             <p>
-            I am a Software Engineering student at <strong>Iowa State University</strong>, pursuing my Bachelor of Science in Engineering with a target graduation date of May 2027. I have a deep love for continuous learning, mathematical logic, and complex problem-solving. While my foundational projects align closely with modern frontend engineering, my current focus is expanding into system architectures and backend APIs. 
+            I am a Software Engineering student at <strong>Iowa State University</strong>. I am currently pursuing a Bachelors with a target graduation date of May 2027. I really like math, puzzles, debating, and challenges! I have experience with developing frontends with React and Java (android) from my school. However, I have also delved into QA and ML experimenting in the clinical trial world for my summer 2026 internship. 
             </p>
             <p>
-              For the summer of 2026, I am interning at <strong>Berry Consultants LLC</strong> on the Software Team. This experience has allowed me to bridge the gap between user-facing design and complex statistical computing, while collaborating closely with senior engineers to build production-ready validation tools and data pipelines.
+            For the summer of 2026, I completed my internship at <strong>Berry Consultants</strong> on the Software Team. This experience taught me a lot about what statistical scientists in the medical industry do, and the importance of developing tools to make their jobs easier. View my posts about the projects I completed under 'professional work' on the <RouterLink to="/">home page</RouterLink>!
             </p>
           </div>
         </section>
@@ -157,7 +157,7 @@ onMounted(async () => {
             <div class="rounded-xl bg-zinc-950 p-5 light:bg-white light:border-zinc-200">
               <div class="flex items-center gap-2 font-bold text-white light:text-zinc-900 mb-4">
                 <Code2 class="h-4.5 w-4.5 text-zinc-500" />
-                <span>Languages &amp; Core</span>
+                <span>Languages</span>
               </div>
               <div class="flex flex-wrap gap-2">
                 <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Java</span>
@@ -166,9 +166,6 @@ onMounted(async () => {
                 <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Python</span>
                 <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">C</span>
 
-                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">HTML5 / CSS3</span>
-                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">SQL</span>
-                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">VHDL</span>
               </div>
             </div>
 
@@ -176,11 +173,9 @@ onMounted(async () => {
             <div class="rounded-xl bg-zinc-950 p-5 light:bg-white light:border-zinc-200">
               <div class="flex items-center gap-2 font-bold text-white light:text-zinc-900 mb-4">
                 <Cpu class="h-4.5 w-4.5 text-zinc-500" />
-                <span>Frameworks &amp; Runtimes</span>
+                <span>Frameworks</span>
               </div>
               <div class="flex flex-wrap gap-2">
-                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Node.js</span>
-                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Express</span>
                 <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Tailwind CSS (v4)</span>
                 <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">React</span>
               </div>
@@ -198,7 +193,36 @@ onMounted(async () => {
                 <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">UX / UI Responsive Design</span>
               </div>
             </div>
+
+          <!-- Goofy -->
+          <div class="sm:col-span-2 rounded-xl bg-zinc-950 p-5 light:bg-white light:border-zinc-200">
+            <div class="flex items-center gap-2 font-bold text-white light:text-zinc-900 mb-4">
+              <Wrench class="h-4.5 w-4.5 text-zinc-500" />
+              <span>Every Language I Have Touched</span>
+            </div>
+              <div class="flex flex-wrap gap-2">
+                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Java</span>
+                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">JavaScript</span>
+                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">TypeScript</span>
+                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Python</span>
+                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">C</span>
+                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">VHDL</span>
+                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Verilog</span>
+                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Racket</span>
+                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">Prolog</span>
+
+                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">SQL</span>
+
+                <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">HTML</span>
+                  <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">CSS</span>
+                  <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">XML</span>
+
+                  <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">PHP</span>
+
+                  <span class="rounded bg-zinc-900/40 border border-zinc-850 px-2 py-1 text-xs font-semibold text-zinc-300 light:bg-zinc-50 light:border-zinc-150 light:text-zinc-700">German</span>
+            </div>
           </div>
+        </div>
         </section>
 
         <!-- Experience & Education Timeline -->
@@ -215,7 +239,29 @@ onMounted(async () => {
               <div class="absolute -left-2 top-1.5 flex h-4 w-4 items-center justify-center rounded-full border border-zinc-850 bg-zinc-950 light:border-zinc-200 light:bg-white">
                 <div class="h-2 w-2 rounded-full bg-white light:bg-zinc-900"></div>
               </div>
-              
+               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                <h4 class="text-lg font-bold text-white light:text-zinc-900">
+                  BE in Software Engineering
+                </h4>
+                <span class="inline-flex items-center gap-1 text-xs font-semibold text-zinc-400 light:text-zinc-500">
+                  <Calendar class="h-3.5 w-3.5" />
+                  Aug 2023 - May 2027
+                </span>
+              </div>
+              <p class="text-sm font-medium text-zinc-455 light:text-zinc-550">
+                Iowa State University
+              </p>
+              <p class="mt-2 text-sm text-zinc-455 light:text-zinc-600 leading-relaxed">
+                Acquiring a solid foundation in computer science and engineering principles. Actively involved in building side projects if I have time between school and work.
+              </p>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="relative pl-7">
+              <!-- Timeline Dot -->
+              <div class="absolute -left-2 top-1.5 flex h-4 w-4 items-center justify-center rounded-full border border-zinc-850 bg-zinc-950 light:border-zinc-200 light:bg-white">
+                <div class="h-2 w-2 rounded-full bg-zinc-450 light:bg-zinc-550"></div>
+              </div>
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                 <h4 class="text-lg font-bold text-white light:text-zinc-900">
                   Software Engineering Intern
@@ -229,34 +275,10 @@ onMounted(async () => {
                 Berry Consultants LLC
               </p>
               <p class="mt-2 text-sm text-zinc-450 light:text-zinc-600 leading-relaxed">
-                Developing deterministic rules checkers and Bayesian optimization algorithms for legacy simulation software.
+                Developing rules checker and applied Bayesian optimization for legacy simulation software.
               </p>
             </div>
-
-            <!-- Timeline Item 2 -->
-            <div class="relative pl-7">
-              <!-- Timeline Dot -->
-              <div class="absolute -left-2 top-1.5 flex h-4 w-4 items-center justify-center rounded-full border border-zinc-850 bg-zinc-950 light:border-zinc-200 light:bg-white">
-                <div class="h-2 w-2 rounded-full bg-zinc-450 light:bg-zinc-550"></div>
-              </div>
-              
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                <h4 class="text-lg font-bold text-white light:text-zinc-900">
-                  BE in Software Engineering
-                </h4>
-                <span class="inline-flex items-center gap-1 text-xs font-semibold text-zinc-400 light:text-zinc-500">
-                  <Calendar class="h-3.5 w-3.5" />
-                  Aug 2023 - May 2027
-                </span>
-              </div>
-              <p class="text-sm font-medium text-zinc-455 light:text-zinc-550">
-                Iowa State University
-              </p>
-              <p class="mt-2 text-sm text-zinc-455 light:text-zinc-600 leading-relaxed">
-                Acquiring a solid foundation in computer science and engineering principles. Actively involved in building side projects and mastering frontend &amp; backend modern software stacks.
-              </p>
-            </div>
-            
+           
           </div>
         </section>
 

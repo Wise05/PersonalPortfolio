@@ -6,58 +6,54 @@ tags: ["React", "Express.js", "Tone.js"]
 featured: false
 ---
 
-# Chip Vote: Building a Browser-Based Chiptune Battle Arena
+# Chip Vote
 
-> **Note**: This project is a work in progress (and a massive labor of love).
+**Note**: This project is a work in progress.
 
-The concept behind **Chip Vote** is simple: a browser-based, multiplayer chiptune battle arena. Imagine *Minecraft Build Battle*, but for music production. 
+A chip tune battle app intended to be on the browser. Users produce their own chip tune song in a toy digital audio workstation (DAW). I have many ideas for different game modes and prompts. However, the general idea is that users will be in a lobby where they will compete to make the best song in the set time. At the end of the round, all users' songs are played and voted on. The song voted best wins! 
 
-Users drop into a lobby, enter a competitive round, and use a stripped-back, built-in digital audio workstation (DAW) to compose the best chiptune track they can before the timer runs out. When the round ends, everyone listens to the submissions in real-time, votes on their favorites, and crowns a winner. 
+## Key Features
 
-Here is a look under the hood at what is built, what went sideways, and where the project is headed.
+### Toy DAW
 
----
+This part has taken me the longest to create and is reason that this project may never be completed. Building a DAW, even a toy one, with enough options to allow for unique styles of music is very challenging. As this is a side project, this is the main reason that this project has taken a back seat. I hope to finish it some day, however, it will likely take several years for it to pan out.
 
-## Key Features & Current State
+The toy DAW is where the user can build music and play it back to listen. There needs to be many considerations put into creating a DAW, especially since we are implementing a toy version, where lots of features in a fully built DAW will be lacking. The greatest hurtle is organization and performance. There are many notes, different types of notes, different instruments, and a whole host of things that could be implemented such as filters, effects, and automation. 
 
-### 1. The Toy DAW (The Ultimate Hurdle)
-This component has easily taken the longest to create. Building a DAW from scratch—even a "toy" version—with enough flexibility to allow for unique musical expressions is a massive undertaking. Because this is a side project, managing its complexity is the main reason development has taken a backseat. I fully intend to finish it, but realistic scope management means it will likely pan out over the next few years.
+Currently, the DAW supports 3.5 instruments. The half of an instrument comes from the drums, which do work, but they do not sound much like a drum. Likely using manual sampling into a piano roll will be required. The other 3 instruments are synths that I asked AI to create for me, and it did a decent job. These three synths make up the lead, bass, and alto or chords that allow for a homogenous sounding song. However, as the project progresses, the requirement to add more instruments or a customizable synth will be required to allow users to make unique pieces.
 
-The goal of the Toy DAW is playback efficiency and intuitive organization. Implementing notes, piano rolls, different instrument types, filters, effects, and automation requires walking a fine line between system performance and user experience.
+### Home page 
 
-* **Current Instrument State**: The DAW currently supports "3.5" instruments. The half-instrument is the drum machine; it functions, but it doesn't quite sound like a proper drum kit yet (I'll likely need to implement manual sampling into the piano roll). 
-* **The Synths**: The other three instruments are functional synthesizers designed with a bit of AI assistance. They cover the essentials—lead, bass, and chords/alto—creating a cohesive, retro soundscape. Moving forward, adding a customizable synth engine will be crucial for letting users truly stand out.
 
-Currently, the DAW only exists in a localized sandbox mode. There is no multiplayer connectivity yet—just a quiet place to test the audio engine.
 
-### 2. The Home Page & Aesthetic
-The home page acts as the structural anchor and establishes the visual identity of the platform. 
+### Stocks page
 
-The UI design heavily echoes the visual patterns of my own personal Neovim configuration. I fell down the Neovim rabbit hole right around the time I started building this project (which is another reason progress slowed down—tweaking a text editor is incredibly addictive). 
+This was intended to allow users to create a watchlist of stocks (allowing them to view their history), buy and sell stocks, and view their portfolio. On the backend, this was done by running a timer to call an API for stock data and then collecting that on our given server. Then the frontend could use the API to get the data and also do mock buying and selling. We used a web socket for the stock price to give real time updates. 
 
-The result is a highly minimalist dark mode accented by vibrant, high-contrast highlights, clean borders, and distinct spacing. It feels technical, retro, and clean.
+### Banking page 
 
----
+This was a simple banking set up that allowed users to create various accounts and withdraw, deposit, or transfer money from them. You could also see transaction history. 
 
-## The Roadmap: Future Implementations
+### News
 
-The following features live entirely in the design phase, but they represent the ultimate vision for Chip Vote.
+This showed a news feed of different articles that were collected by the backend. The backend got these articles by calling an API periodically, similar to stocks page. You could also filter based on company/topic. 
 
-### Lobby, Voting, and the Podium
-The multiplayer flow relies on three distinct states:
+### AI Advice
 
-* **The Lobby**: Where players land after selecting multiplayer. To keep players engaged while waiting for a room to fill, I plan to implement a simple, collaborative musical mini-game that everyone in the lobby can interact with simultaneously.
-* **Real-Time Voting**: Once the countdown ends, the voting stage begins. Borrowing inspiration from *Build Battle*, players will listen to tracks concurrently and vote via a dynamic visualizer. I want to experiment with interactive feedback: if a song gets poor marks, the screen might tint red and the audio might fade out early. While harsh, a "skip" mechanic keeps the pacing fast, thwarts trolls, and mirrors real-world streaming metrics where artists have to hook the listener within the first 30 seconds.
-* **The Podium**: A celebratory screen displaying the top three composers alongside a full leaderboard breakdown. Climbing the ranks will eventually reward players with UI customization options or profile badges to showcase their skills.
+This was an AI that was given a prompt to behave as a financial advisor. The AI was hosted on the app's server and the frontend just called the API. 
 
-### Interactive Learning
-I envision Chip Vote as a potential educational tool for music theory classrooms. It offers a gamified, competitive environment to teach songwriting basics. The early stages will focus purely on chiptune-style arrangements, though future iterations could branch into other genres depending on how far I scale the audio engine.
+### Budgeting
 
-### The Global Scoreboard
-To give compositions a life after the round ends, the highest-rated podium tracks will be preserved on a global leaderboard. To keep the content fresh and prevent an amazing track from 2026 dominating forever, the board will feature weekly, monthly, yearly, and all-time filters. Players will also have their historical tracks saved automatically to their profiles, with the option to opt-out or purge files.
+This page allowed you to make budgeting plans. We kind of just tacked this on at the end to get points. 
 
----
+### Posts page
 
-## Conclusion
+This was a social media page that used a websocket to show real time posts. You could also filter posts based on key words. 
 
-Chip Vote is an incredibly ambitious undertaking for a solo developer's side project. It might take years of incremental updates to fully realize, but that is exactly what a passion project is for. The longer the runway, the better the final output will be.
+## My contribution
+
+I built the frontend for Login/sign up, budget form, banking, AI advice, and posts page. I also polished the xml for the stocks page and news page. Built the volley utils and refactored the frontend midway through to give the frontend code a bit more consistency and clean up the messiness a bit. 
+
+## Challenges 
+
+This whole project was a real test in my people skills. There seemed to be some sort of disagreement at almost every step of the project. Many times, my teammates seemed to not understand what I was trying to convey, despite my best efforts to re-iterate. Overall, I think that the challenges that this group faced just in communication and team work prepared me for the absolute worst possible team situation you could be in without any real pressure. Since it was only a school project. Ironically, the technical part of this project was much easier than any of the team management aspects. 

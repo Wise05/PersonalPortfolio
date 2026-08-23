@@ -72,7 +72,7 @@ import { RouterLink } from 'vue-router'
             </svg>
           </a>
           <a 
-            href="../../assets/Resume_Spring_2026_Zephaniah_Gustafson.pdf" 
+            href="/Resume.pdf" 
             download="Zephaniah_Gustafson_Resume.pdf"
             class="text-zinc-400 hover:text-white light:text-zinc-500 light:hover:text-zinc-950 transition-colors"
             title="Download CV"

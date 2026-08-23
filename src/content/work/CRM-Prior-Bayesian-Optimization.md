@@ -39,7 +39,7 @@ This inverse logit function also produces the sigmoid-like curve and allows for 
 ## The Prior Problem
 
 An issue with CRM is that it requires a good prior (initial curve) in order to perform well. 
-However, the process of finding a good prior is difficult, and has not set best method. 
+However, the process of finding a good prior is difficult, and has no best method. 
 So, the idea of this project is to allow for a trial designer to run a search algorithm where they set what they want to look for, and overnight the search finds the best possible parameters to meet their goals. 
 
 ---

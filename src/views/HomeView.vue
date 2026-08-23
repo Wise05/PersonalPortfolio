@@ -31,7 +31,7 @@ const courseworkItems = computed(() => getCoursework())
         I am a student, currently attending Iowa State University for a BE in Software Engineering, planning to graduate in May 2027. 
       </p>
       <p class="max-w-3xl text-lg text-zinc-400 light:text-zinc-600 leading-relaxed">
-        My current work is at Berry Consultants LLC as an intern (summer of 2026) on the Software Team.
+        My 2026 summer internship was at Berry Consultants as an intern on the Software Team.
       </p>
       <p class="max-w-3xl text-lg text-zinc-400 light:text-zinc-600 leading-relaxed">
         For a more in depth look at me, visit the <RouterLink class="hover:text-zinc-200 underline" to="/about">about page</RouterLink>. 

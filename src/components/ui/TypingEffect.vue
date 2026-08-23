@@ -15,7 +15,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const props = defineProps({
   words: {
     type: Array,
-    default: () => ['Software Engineer', 'Iowa State Student', 'Berry Consultants Intern', 'Linux Lover', 'Front End Developer', 'SWE Intern', 'Aspiring Developer', 'I use vim btw', 'Tech Enthusiast', 'Climbing Hobbist', 'Java Praiser']
+    default: () => ['Hello!', 'I am a...', 'Software Engineer', 'Iowa State Student', 'Berry Consultants Intern', 'Linux Lover', 'SWE Intern', 'Aspiring Developer', 'vim user btw', 'Climber', 'Java enjoyer']
   },
   typeSpeed: {
     type: Number,

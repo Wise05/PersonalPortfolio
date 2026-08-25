@@ -11,7 +11,7 @@ import {
   Wrench,
   ExternalLink
 } from '@lucide/vue'
-import mugShot from '../assets/mug_shot.webp'
+import mugShot from '../assets/my_photo.jpg'
 
 const tracks = ref([])
 const isLoading = ref(true)
